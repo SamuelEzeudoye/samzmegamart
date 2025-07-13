@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home - Samz MegaMart</title>
+</head>
+<body>
+
+  <!-- Header will be loaded here -->
+  <div id="header-placeholder"></div>
+
+  <!-- Page content -->
+  <main>
+    <h2>Welcome to Samz MegaMart!</h2>
+    <p>Shop our quality FMCG products.</p>
+  </main>
+
+  <!-- Footer will be loaded here -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Script to load HTML includes -->
+  <script>
+    // Load header
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      });
+
+    // Load footer
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
