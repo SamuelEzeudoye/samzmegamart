@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Social Share Meta (Open Graph) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samzmegamart.netlify.app/prime-fresh-sunflower-oil-4x5ltr.html">
+<meta property="og:title" content="Prime Fresh Sunflower Oil 4x5ltr">
+<meta property="og:description" content="Great for frying, cooking, baking & salad dressing">
+<meta property="og:image" content="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/47a0edbb544bf7240d5507b95887f30c51805f27.jpeg">
+
+  <title>Prime Fresh Sunflower Oil 4x5ltr</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      touch-action: pan-y;
+    }
+
+    .carousel-image {
+      width: 100%;
+      flex-shrink: 0;
+      user-select: none;
+      border-radius: 8px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      font-size: 50px;
+      padding: 15px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-btn {
+      
+      }
+    }
+
+    .thumbnails {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    .thumbnails img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      flex-shrink: 0;
+    }
+
+    .thumbnails img.active {
+      border: 2px solid #007bff;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 20px 0 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px 10px 10px 0;
+      background: #f5a623;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #d98d0f;
+    }
+
+    .social {
+      margin-top: 15px;
+    }
+
+    .social a {
+      margin-right: 15px;
+      color: #555;
+      font-size: 22px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social a:hover {
+      color: #f5a623;
+    }
+
+    .chat-input {
+      margin-top: 15px;
+      display: none;
+      flex-direction: column;
+    }
+
+    .chat-input input {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .chat-input button {
+      padding: 10px;
+      font-size: 16px;
+      background: #f5a623;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .chat-input button:hover {
+      background: #d98d0f;
+    }
+
+    .store-address {
+      background: #f9f9f9;
+      padding: 15px;
+      margin-top: 15px;
+      border-left: 5px solid #f5a623;
+      border-radius: 5px;
+    }
+
+    .store-address h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .store-address p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .closed-time {
+      color: green;
+      font-weight: bold;
+    }
+
+    .product-price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #000000;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+  <div class="container">
+
+    <!-- Carousel -->
+    <div class="carousel">
+      <div class="carousel-wrapper" id="carouselWrapper">
+        <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/47a0edbb544bf7240d5507b95887f30c51805f27.jpeg" alt="Image 1" class="carousel-image">
+        <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/18a989165ee400a0f1426f2124644547ed0ad56d.jpeg" alt="Image 2" class="carousel-image">
+      </div>
+      <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
+      <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="thumbnails" id="thumbnails">
+      <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/47a0edbb544bf7240d5507b95887f30c51805f27.jpeg" onclick="goToImage(0)" class="active">
+      <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/18a989165ee400a0f1426f2124644547ed0ad56d.jpeg" onclick="goToImage(1)">
+    </div>
+
+    <!-- Product Info -->
+    <h1>Prime Fresh Sunflower Oil 4x5ltr</h1>
+    <div class="product-price">₦73,000 - (4x5ltr)<br/><br/>₦18,800 - (1 pcs)</div>
+
+   <div id="mystoreaddress-placeholder"></div>
+    <p>
+      Looking for a healthy and affordable cooking oil in bulk?
+
+PRIME FRESH Sunflower Oil is your go-to choice!
+<br/><br/>
+
+
+✅ 100% pure and light sunflower oil
+<br/>
+✅ Great for frying, cooking, baking & salad dressing
+<br/>
+✅ Cholesterol-free – heart-friendly cooking
+<br/>
+✅ Comes in strong 5L bottles, perfect for storage and everyday use
+<br/>
+✅ Neatly packed – 4 bottles per carton (4x5Ltr)
+<br/><br/>
+
+📦 Freshly stocked and ready for dispatch
+<br/>
+🛒 Ideal for food businesses, restaurants, homes, and supermarkets
+<br/>
+💰 Competitive wholesale price – value guaranteed
+<br/>
+🚚 Nationwide delivery available
+    </p>
+<div id="mycontact-placeholder"></div>
+<script src="mycontact.js"></script>
+    </div>
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script>
+    const wrapper = document.getElementById('carouselWrapper');
+    const images = document.querySelectorAll('.carousel-image');
+    const thumbs = document.querySelectorAll('#thumbnails img');
+    let currentIndex = 0;
+
+    function updateSlide() {
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      thumbs.forEach((img, i) => {
+        img.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextImage() {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateSlide();
+      }
+    }
+
+    function prevImage() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlide();
+      }
+    }
+
+    function goToImage(index) {
+      currentIndex = index;
+      updateSlide();
+    }
+
+    // Swipe Support
+    let startX = 0;
+    wrapper.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    wrapper.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (diff > 50) nextImage();
+      else if (diff < -50) prevImage();
+    });
+  </script>
+<script src="mycontact.js"></script>
+  <!-- Load Header and Footer -->
+  <script>
+    fetch("header.html").then(res => res.text()).then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+    fetch("mystoreaddress.html").then(res => res.text()).then(data => {
+      document.getElementById("mystoreaddress-placeholder").innerHTML = data;
+    });
+  fetch("mycontact.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("mycontact-placeholder").innerHTML = data;
+
+      // Once the contact section is added to the DOM, update the social share links
+      const pageUrl = encodeURIComponent(window.location.href);
+
+      const fb = document.getElementById("shareFb");
+      const x = document.getElementById("shareTw");
+      const wa = document.getElementById("shareWa");
+
+      if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+      if (x) x.href = `https://twitter.com/intent/tweet?url=${pageUrl}`;
+      if (wa) wa.href = `https://wa.me/?text=${pageUrl}`;
+    });
+  </script>
+</body>
+</html>
