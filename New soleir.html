@@ -218,42 +218,16 @@
     <h1>Soleir Pure Sunflower Oil 4x5ltr</h1>
     <div class="product-price">₦79,000</div>
 
-    <div class="store-address">
-      <h3>Store address</h3>
-      <p>
-        <strong>Lagos State · Lagos Island (Eko)</strong><br>
-        Oke Arin, Lagos Island.<br>
-        Egerton road, Close to Zenith Bank along Issa Williams Street, Lagos Island.<br>
-        <span class="closed-time">· Mon - Sat, 08:00am - 06:00pm</span>
-      </p>
-    </div>
+   <div id="mystoreaddress-placeholder"></div>
 
     <p>
       Whether you're frying, cooking, or making that crispy small chops, Soleir delivers clean, light, and healthy results — no heavy smell, no greasy aftermath.
       Bulk buyers, caterers, food vendors and smart resellers, this is your plug!
       4 bottles of 5 litres each means long-lasting supply and good resale margin.
     </p>
-
-    <!-- Buttons -->
-    <button class="button" id="contactBtn" onclick="showContact()">Show Contact</button>
-    <button class="button" onclick="makeOffer()">Make an Offer</button>
-    <button class="button" onclick="toggleChat()">Start Chat</button>
-
-    <!-- Social Share -->
-    <div class="social">
-      <p style="font-weight: bold; font-size: 14px; margin-bottom: 10px;">SHARE THIS PRODUCT ON</p>
-      <a href="#" id="shareFb" target="_blank" title="Share on Facebook"><i class="fab fa-facebook fa-lg"></i></a>
-      <a href="#" id="shareTw" target="_blank" title="Share on X"><i class="fab fa-x-twitter fa-lg"></i></a>
-      <a href="#" id="shareWa" target="_blank" title="Share on WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+<div id="mycontact-placeholder"></div>
+<script src="mycontact.js"></script>
     </div>
-
-    <!-- Chat Input -->
-    <div class="chat-input" id="chatInput">
-      <input type="text" id="chatMessage" placeholder="Type your message here...">
-      <button onclick="sendChat()">Send Message</button>
-    </div>
-  </div>
-
   <!-- Footer -->
   <div id="footer-placeholder"></div>
 
@@ -298,37 +272,6 @@
       if (diff > 50) nextImage();
       else if (diff < -50) prevImage();
     });
-
-    // Contact
-    function showContact() {
-      const btn = document.getElementById("contactBtn");
-      btn.textContent = "+234 901 523 8244";
-      btn.onclick = () => window.location.href = "tel:+2349015238244";
-    }
-
-    function makeOffer() {
-      const url = encodeURIComponent(window.location.href);
-      const message = "I would buy it for ...";
-      window.open(`https://wa.me/2349015238244?text=${encodeURIComponent(message)}%0A${url}`, '_blank');
-    }
-
-    function toggleChat() {
-      const chatBox = document.getElementById("chatInput");
-      chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
-    }
-
-    function sendChat() {
-      const msg = document.getElementById("chatMessage").value;
-      const url = encodeURIComponent(window.location.href);
-      const fullMsg = `${msg}%0A${url}`;
-      window.open(`https://wa.me/2349015238244?text=${fullMsg}`, '_blank');
-    }
-
-    // Social share links
-    const pageUrl = encodeURIComponent(window.location.href);
-    document.getElementById("shareFb").href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-    document.getElementById("shareTw").href = `https://twitter.com/intent/tweet?url=${pageUrl}`;
-    document.getElementById("shareWa").href = `https://wa.me/?text=${pageUrl}`;
   </script>
 
   <!-- Load Header and Footer -->
@@ -338,6 +281,12 @@
     });
     fetch("footer.html").then(res => res.text()).then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
+    });
+    fetch("mystoreaddress.html").then(res => res.text()).then(data => {
+      document.getElementById("mystoreaddress-placeholder").innerHTML = data;
+    });
+     fetch("mycontact.html").then(res => res.text()).then(data => {
+      document.getElementById("mycontact-placeholder").innerHTML = data;
     });
   </script>
 </body>
