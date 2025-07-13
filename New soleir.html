@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Soleir Pure Sunflower Oil 4x5ltr</title>
@@ -19,20 +19,62 @@
       padding: 20px;
       border-radius: 8px;
     }
+
     .carousel {
       position: relative;
-      width: 100%;
-    }
-    .carousel img {
+      overflow: hidden;
       width: 100%;
       height: auto;
       border-radius: 8px;
     }
+
+    .carousel-wrapper {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      touch-action: pan-y;
+    }
+
+    .carousel-image {
+      width: 100%;
+      flex-shrink: 0;
+      user-select: none;
+      border-radius: 8px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      font-size: 30px;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .carousel-btn.prev {
+      left: 10px;
+    }
+
+    .carousel-btn.next {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-btn {
+        display: none;
+      }
+    }
+
     .thumbnails {
       margin-top: 10px;
       display: flex;
       gap: 10px;
+      overflow-x: auto;
     }
+
     .thumbnails img {
       width: 100px;
       height: 100px;
@@ -40,18 +82,23 @@
       cursor: pointer;
       border-radius: 6px;
       border: 2px solid transparent;
+      flex-shrink: 0;
     }
+
     .thumbnails img.active {
       border: 2px solid #007bff;
     }
+
     h1 {
       font-size: 24px;
       margin: 20px 0 10px;
     }
+
     p {
       font-size: 16px;
       line-height: 1.6;
     }
+
     .button {
       display: inline-block;
       padding: 12px 20px;
@@ -63,23 +110,33 @@
       font-weight: bold;
       cursor: pointer;
     }
+
     .button:hover {
       background: #d98d0f;
     }
+
     .social {
-      margin-top: 10px;
+      margin-top: 15px;
     }
+
     .social a {
-      margin-right: 10px;
+      margin-right: 15px;
+      color: #555;
+      font-size: 22px;
       text-decoration: none;
-      font-size: 16px;
-      color: #007bff;
+      transition: color 0.3s ease;
     }
+
+    .social a:hover {
+      color: #f5a623;
+    }
+
     .chat-input {
       margin-top: 15px;
       display: none;
       flex-direction: column;
     }
+
     .chat-input input {
       padding: 10px;
       font-size: 16px;
@@ -87,6 +144,7 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     .chat-input button {
       padding: 10px;
       font-size: 16px;
@@ -96,81 +154,79 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
     .chat-input button:hover {
       background: #d98d0f;
     }
+
     .store-address {
-  background: #f9f9f9;
-  padding: 15px;
-  margin-top: 15px;
-  border-left: 5px solid #f5a623;
-  border-radius: 5px;
-}
-.store-address h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
-  color: #333;
-}
-.store-address p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #444;
-}
-.closed-time {
-  color: green;
-  font-weight: bold;
-}
-.product-price {
-  font-size: 22px;
-  font-weight: bold;
-  color: #000000;
-  margin: 15px 0;
-}
-.social {
-  margin-top: 15px;
-}
-.social a {
-  margin-right: 15px;
-  color: #555;
-  font-size: 22px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.social a:hover {
-  color: #f5a623; /* Your brand yellow */
-}
+      background: #f9f9f9;
+      padding: 15px;
+      margin-top: 15px;
+      border-left: 5px solid #f5a623;
+      border-radius: 5px;
+    }
+
+    .store-address h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .store-address p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .closed-time {
+      color: green;
+      font-weight: bold;
+    }
+
+    .product-price {
+      font-size: 22px;
+      font-weight: bold;
+      color: #000000;
+      margin: 15px 0;
+    }
   </style>
 </head>
 <body>
- <!-- Header will be loaded here -->
+  <!-- Header -->
   <div id="header-placeholder"></div>
   <div class="container">
+
     <!-- Carousel -->
     <div class="carousel">
-      <img id="mainImage" src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/c14b0adab8d073b2505db5fce0bc65847fe9f58a.jpeg" alt="Sunflower Oil">
-      <div class="thumbnails">
-        <img class="active" src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/c14b0adab8d073b2505db5fce0bc65847fe9f58a.jpeg" onclick="changeImage(this)">
-        <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/b15623ddaa6dab040b62b34efddd65a611ac116b.jpeg" onclick="changeImage(this)">
+      <div class="carousel-wrapper" id="carouselWrapper">
+        <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/c14b0adab8d073b2505db5fce0bc65847fe9f58a.jpeg" alt="Image 1" class="carousel-image">
+        <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/b15623ddaa6dab040b62b34efddd65a611ac116b.jpeg" alt="Image 2" class="carousel-image">
       </div>
+      <button class="carousel-btn prev" onclick="prevImage()">&#10094;</button>
+      <button class="carousel-btn next" onclick="nextImage()">&#10095;</button>
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="thumbnails" id="thumbnails">
+      <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/c14b0adab8d073b2505db5fce0bc65847fe9f58a.jpeg" onclick="goToImage(0)" class="active">
+      <img src="https://salescabal.s3.eu-west-3.amazonaws.com/stores/245251/products/b15623ddaa6dab040b62b34efddd65a611ac116b.jpeg" onclick="goToImage(1)">
     </div>
 
     <!-- Product Info -->
     <h1>Soleir Pure Sunflower Oil 4x5ltr</h1>
-    <!-- Product Price -->
-<div class="product-price">
-  ₦79,000
-</div>
-<!-- Store Address -->
-<div class="store-address">
-  <h3>Store address</h3>
-  <p>
-    <strong>Lagos State · Lagos Island (Eko)</strong><br>
-    Oke Arin, Lagos Island.<br>
-    Egerton road, Close to Zenith Bank along Issa Williams Street, Lagos Island.<br>
-    <span class="closed-time">· Mon - Sat, 08:00am - 06:00pm</span>
-  </p>
-</div>
+    <div class="product-price">₦79,000</div>
+
+    <div class="store-address">
+      <h3>Store address</h3>
+      <p>
+        <strong>Lagos State · Lagos Island (Eko)</strong><br>
+        Oke Arin, Lagos Island.<br>
+        Egerton road, Close to Zenith Bank along Issa Williams Street, Lagos Island.<br>
+        <span class="closed-time">· Mon - Sat, 08:00am - 06:00pm</span>
+      </p>
+    </div>
 
     <p>
       Whether you're frying, cooking, or making that crispy small chops, Soleir delivers clean, light, and healthy results — no heavy smell, no greasy aftermath.
@@ -183,20 +239,13 @@
     <button class="button" onclick="makeOffer()">Make an Offer</button>
     <button class="button" onclick="toggleChat()">Start Chat</button>
 
-   <!-- Social Share -->
-<div class="social">
-  <p style="font-weight: bold; font-size: 14px; margin-bottom: 10px;">SHARE THIS PRODUCT ON</p>
-  <a href="#" id="shareFb" target="_blank" title="Share on Facebook">
-    <i class="fab fa-facebook fa-lg"></i>
-  </a>
-  <a href="#" id="shareTw" target="_blank" title="Share on X">
-    <i class="fab fa-x-twitter fa-lg"></i>
-  </a>
-  <a href="#" id="shareWa" target="_blank" title="Share on WhatsApp">
-    <i class="fab fa-whatsapp fa-lg"></i>
-  </a>
-</div>
-
+    <!-- Social Share -->
+    <div class="social">
+      <p style="font-weight: bold; font-size: 14px; margin-bottom: 10px;">SHARE THIS PRODUCT ON</p>
+      <a href="#" id="shareFb" target="_blank" title="Share on Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" id="shareTw" target="_blank" title="Share on X"><i class="fab fa-x-twitter fa-lg"></i></a>
+      <a href="#" id="shareWa" target="_blank" title="Share on WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+    </div>
 
     <!-- Chat Input -->
     <div class="chat-input" id="chatInput">
@@ -205,37 +254,69 @@
     </div>
   </div>
 
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
   <script>
-    // Carousel function
-    function changeImage(el) {
-      document.getElementById("mainImage").src = el.src;
-      document.querySelectorAll(".thumbnails img").forEach(img => img.classList.remove("active"));
-      el.classList.add("active");
+    const wrapper = document.getElementById('carouselWrapper');
+    const images = document.querySelectorAll('.carousel-image');
+    const thumbs = document.querySelectorAll('#thumbnails img');
+    let currentIndex = 0;
+
+    function updateSlide() {
+      wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+      thumbs.forEach((img, i) => {
+        img.classList.toggle('active', i === currentIndex);
+      });
     }
 
-    // Show contact
+    function nextImage() {
+      if (currentIndex < images.length - 1) {
+        currentIndex++;
+        updateSlide();
+      }
+    }
+
+    function prevImage() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlide();
+      }
+    }
+
+    function goToImage(index) {
+      currentIndex = index;
+      updateSlide();
+    }
+
+    // Swipe Support
+    let startX = 0;
+    wrapper.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    wrapper.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (diff > 50) nextImage();
+      else if (diff < -50) prevImage();
+    });
+
+    // Contact
     function showContact() {
       const btn = document.getElementById("contactBtn");
       btn.textContent = "+234 901 523 8244";
-      btn.onclick = () => {
-        window.location.href = "tel:+2349015238244";
-      };
+      btn.onclick = () => window.location.href = "tel:+2349015238244";
     }
 
-    // Make offer via WhatsApp
     function makeOffer() {
       const url = encodeURIComponent(window.location.href);
       const message = "I would buy it for ...";
       window.open(`https://wa.me/2349015238244?text=${encodeURIComponent(message)}%0A${url}`, '_blank');
     }
 
-    // Toggle chat input
     function toggleChat() {
       const chatBox = document.getElementById("chatInput");
       chatBox.style.display = chatBox.style.display === "flex" ? "none" : "flex";
     }
 
-    // Send chat message
     function sendChat() {
       const msg = document.getElementById("chatMessage").value;
       const url = encodeURIComponent(window.location.href);
@@ -249,24 +330,15 @@
     document.getElementById("shareTw").href = `https://twitter.com/intent/tweet?url=${pageUrl}`;
     document.getElementById("shareWa").href = `https://wa.me/?text=${pageUrl}`;
   </script>
-<!-- Footer will be loaded here -->
-  <div id="footer-placeholder"></div>
 
-  <!-- Script to load HTML includes -->
+  <!-- Load Header and Footer -->
   <script>
-    // Load header
-    fetch("header.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("header-placeholder").innerHTML = data;
-      });
-
-    // Load footer
-    fetch("footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
-      });
+    fetch("header.html").then(res => res.text()).then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
   </script>
 </body>
 </html>
