@@ -24,7 +24,13 @@
     }
 
     // Social share links
-    const pageUrl = encodeURIComponent(window.location.href);
-    document.getElementById("shareFb").href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-    document.getElementById("shareTw").href = `https://twitter.com/intent/tweet?url=${pageUrl}`;
-    document.getElementById("shareWa").href = `https://wa.me/?text=${pageUrl}`;
+document.addEventListener('DOMContentLoaded', () => {
+  const pageUrl = encodeURIComponent(window.location.href);
+  const fb = document.getElementById("shareFb");
+  const x = document.getElementById("shareTw");
+  const wa = document.getElementById("shareWa");
+
+  if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+  if (x) x.href = `https://twitter.com/intent/tweet?url=${pageUrl}`;
+  if (wa) wa.href = `https://wa.me/?text=${pageUrl}`;
+});
