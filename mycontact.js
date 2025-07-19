@@ -1,13 +1,13 @@
 // Contact
     function showContact() {
       const btn = document.getElementById("contactBtn");
-      btn.textContent = "+234 901 523 8244";
+      btn.textContent = "Tap to Call +234 901 523 8244";
       btn.onclick = () => window.location.href = "tel:+2349015238244";
     }
 
     function makeOffer() {
       const url = encodeURIComponent(window.location.href);
-      const message = "I would buy it for ...";
+      const message = "Can i buy it for ...";
       window.open(`https://wa.me/2349015238244?text=${encodeURIComponent(message)}%0A${url}`, '_blank');
     }
 
