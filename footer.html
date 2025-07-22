@@ -94,8 +94,7 @@
 
 <!-- Page View Counter Script -->
 <script>
-  // Create a unique key for each page by using its path
-  const pagePath = window.location.pathname.replace(/\W/g, "_"); // e.g. /new-soleir.html → _new_soleir_html
+  const pagePath = window.location.pathname.replace(/\W/g, "_"); // Convert pathname to safe key
   const counterKey = "samzmegamart" + pagePath;
 
   fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`)
@@ -103,8 +102,9 @@
     .then(data => {
       document.getElementById("visitCount").textContent = data.value;
     })
-    .catch(() => {
-      document.getElementById("visitCount").textContent = "Unavailable");
+    .catch((error) => {
+      console.error("Visit counter error:", error);
+      document.getElementById("visitCount").textContent = "Unavailable";
     });
 </script>
     </div>
