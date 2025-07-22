@@ -90,23 +90,11 @@
     </a>
       </div>
       <!-- Footer content -->
-<p>Total Visits: <span id="visitCount">Loading...</span></p>
+<p>Total Visits:  <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=b1325ac588f9768fe7e03591570a83828cdee6cd'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1368327/t/3"></script></p>
 
 <!-- Page View Counter Script -->
-<script>
-  const pagePath = window.location.pathname.replace(/\W/g, "_"); // Convert pathname to safe key
-  const counterKey = "samzmegamart" + pagePath;
 
-  fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`)
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById("visitCount").textContent = data.value;
-    })
-    .catch((error) => {
-      console.error("Visit counter error:", error);
-      document.getElementById("visitCount").textContent = "Unavailable";
-    });
-</script>
     </div>
   </div>
 </footer>
