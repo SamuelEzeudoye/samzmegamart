@@ -89,6 +89,20 @@
       <i class="fab fa-whatsapp"></i>
     </a>
       </div>
+      <p>Total Visits: <span id="visitCount">Loading...</span></p>
+<script>
+  const pathName = window.location.pathname.replace(/\W/g, "_"); // page-specific key
+  const counterKey = "samzmegamart" + pathName;
+
+  fetch(`https://api.countapi.xyz/hit/${counterKey}/visits`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("visitCount").textContent = data.value;
+    })
+    .catch(() => {
+      document.getElementById("visitCount").textContent = "Error";
+    });
+</script>
     </div>
   </div>
 </footer>
